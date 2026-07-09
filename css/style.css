@@ -134,6 +134,19 @@ img { max-width: 100%; display: block; }
 }
 .brand-name em { font-style: italic; font-weight: 400; color: var(--sage); }
 
+.brand-subtitle-row {
+  padding-bottom: 12px;
+  margin-top: -8px;
+}
+.brand-subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sage);
+  font-size: 0.95rem;
+  display: block;
+}
+
 .main-nav { display: flex; gap: 28px; }
 .main-nav a {
   text-decoration: none;

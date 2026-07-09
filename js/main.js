@@ -58,7 +58,7 @@ form.addEventListener("submit", async (e) => {
   if (form.companyWebsite.value) return;
 
   if (SUPABASE_URL.startsWith("PASTE_") || SUPABASE_ANON_KEY.startsWith("PASTE_")) {
-    statusEl.textContent = "Form is not connected yet — add your Supabase URL and key in js/main.js.";
+    statusEl.textContent = "Formularz nie jest jeszcze podłączony — dodaj URL i klucz Supabase w pliku js/main.js.";
     statusEl.dataset.state = "error";
     return;
   }
@@ -74,7 +74,7 @@ form.addEventListener("submit", async (e) => {
   };
 
   submitBtn.disabled = true;
-  submitBtn.textContent = "Sending…";
+  submitBtn.textContent = "Wysyłanie…";
   statusEl.textContent = "";
   statusEl.removeAttribute("data-state");
 
@@ -96,14 +96,14 @@ form.addEventListener("submit", async (e) => {
     }
 
     form.reset();
-    statusEl.textContent = "Thank you — your message has been sent. I'll be in touch within 24 hours.";
+    statusEl.textContent = "Dziękuję — Twoja wiadomość została wysłana. Odezwę się w ciągu 24 godzin.";
     statusEl.dataset.state = "success";
   } catch (err) {
     console.error("Contact form submission failed:", err);
-    statusEl.textContent = "Something went wrong sending your message. Please try again or email directly.";
+    statusEl.textContent = "Coś poszło nie tak przy wysyłaniu wiadomości. Spróbuj ponownie lub napisz bezpośrednio e-mailem.";
     statusEl.dataset.state = "error";
   } finally {
     submitBtn.disabled = false;
-    submitBtn.textContent = "Start your healing journey";
+    submitBtn.textContent = "Rozpocznij swoją drogę do zdrowia";
   }
 });
